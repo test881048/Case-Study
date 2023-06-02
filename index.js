@@ -28,6 +28,8 @@ app.get("/", (req, res) => {
 app.post("/api/upload", upload.single("file"), (req, res) => {
   const file = req.file;
   const s3Key = file.originalname;
+  const extension = s3Key.split('.');
+
   const params = {
     Bucket: "bhasker-ki-bucket",
     Key: s3Key,
@@ -35,13 +37,17 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   };
 
   // Upload the file to S3
-  s3.upload(params, (err, data) => {
-    if (err) {
-      res.status(500).send("Error uploading file to S3");
-    } else {
-      res.send("File Uploaded to S3.");
-    }
-  });
+  if(extension[1]=='JPG' || extension[1]=='jpg' || extension[1]=='JPEG' || extension[1]=='jpeg'){
+    s3.upload(params, (err, data) => {
+      if (err) {
+        res.status(500).send("Error uploading file to S3");
+      } else {
+        res.send("File Uploaded to S3.");
+      }
+    });
+  }else{
+    res.send("only JPG, JPEG formats are allowed")
+  }
 });
 
 app.listen(3000, () => {
