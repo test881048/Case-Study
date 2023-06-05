@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>case study</title>
+    <link rel="stylesheet" href="public/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">Case Study</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+      </div>
+      <a href="/" class="btn btn-warning" style="margin-right: 10px;">Home</a>
+      <a href="/signout" class="btn btn-warning" style="margin-right: 20px;">SignOut</a>
+    </nav>
+
+    <div class="container my-5">
+      <h1 class="display-3 text-center">Upload Page</h1>
+
+      <div class="col-md-6 shadow mx-auto p-4">
+        <form action="/api/upload" enctype="multipart/form-data" method="post">
+          <div style="margin-left: 42px">
+            Select a file:
+            <input type="file" name="file" multiple="multiple" />
+          </div>
+          <br />
+          <div class="dropdown" style="margin-left: 42px">
+            <label for="dropdown">Select Image Category:</label>
+            <select id="dropdown" name="category" class="btn btn-outline-secondary">
+              <option value="Animals">Animals</option>
+              <option value="Fruits">Fruits</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+          </div>
+          <br />
+          <div align="center">
+            <input
+              class="btn btn-success col-sm-10"
+              type="submit"
+              value="Upload"
+            />
+          </div>
+        </form>
+        <br/>
+        <p style="color: red;" align='center'><%= err %></p>
+      </div>
+    </div>
+  </body>
+</html>

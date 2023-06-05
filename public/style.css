@@ -1,0 +1,38 @@
+.red {
+  border: 1px solid red;
+}
+.normal {
+  border: 1px solid #ced4da;
+}
+#err {
+  color: red;
+}
+#animaldiv {
+  border: none;
+  width: 300px;
+  height: 200px;
+  background-image: url("./animal.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#fruitdiv {
+  border: none;
+  width: 300px;
+  height: 200px;
+  background-image: url("./fruit.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#miscdiv {
+  border: none;
+  width: 300px;
+  height: 200px;
+  background-image: url("./gadget.jfif");
+  background-size: cover;
+  background-position: center;
+}
+#imagediv {
+  border: none;
+  width: 300px;
+  height: 200px;
+}
